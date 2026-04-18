@@ -2,6 +2,10 @@ import streamlit as st
 import requests
 import pandas as pd
 import numpy as np
+st.title("🌱 AgriSense AI - Satellite Crop Health Monitoring")
+st.caption("MLOps + Remote Sensing + Machine Learning Dashboard")
+st.success("🚀 System deployed successfully on Streamlit Cloud")
+st.sidebar.info("Built using Streamlit + ML + Satellite NDVI Data")
 import folium
 from streamlit_folium import st_folium
 import joblib
