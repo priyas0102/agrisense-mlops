@@ -9,6 +9,7 @@ import ee
 from ee_data import get_ndvi_points
 model = joblib.load("crop_model.pkl")
 
+
 def predict_label(ndvi):
     features = np.array([[ndvi, ndvi**2, np.log(ndvi + 1e-5)]])
     return model.predict(features)[0]
@@ -29,10 +30,11 @@ def get_color(label):
     else:
         return "red"
 from ee_data import get_ndvi_points
-
+df = pd.read_csv("ndvi_data.csv")
 @st.cache_data
 def load_data():
     data = get_ndvi_points()
+    df = pd.DataFrame(get_ndvi_points())
     return pd.DataFrame(data)
 
 df = load_data()
